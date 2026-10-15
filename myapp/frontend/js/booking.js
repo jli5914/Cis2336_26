@@ -6,8 +6,7 @@
 
 async function populateRoomSelect() {
   const select = document.getElementById("room-select");
-  
-  
+  const rooms = await getRooms()
   for (const room of rooms) {
       const option = document.createElement("option")
       option.value = room.id;
@@ -24,6 +23,7 @@ function handleBookingSubmit(event) {
   event.preventDefault();
 
   const statusEl = document.getElementById("form-status");
+
 
   // TODO:
   // 1. Read the form values (roomId, clubName, date, startTime, endTime, purpose)
